@@ -9,5 +9,10 @@ for i in range(len(input_list)):
             continue
         else:
             if input_list[i]+input_list[j] == 2020:
-                print(f'i: {i}, j: {j}')
-                print(f'product: {i*j}')
+                solution = input_list[i] * input_list[j]
+
+                print(i)
+                print(j)
+                print(input_list[i])
+                print(input_list[j])
+                print(f'product: {solution}')
