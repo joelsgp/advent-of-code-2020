@@ -1,7 +1,7 @@
-with open('input.txt', 'r') as input_file:
+with open('input', 'r') as input_file:
     input_raw = input_file.read()
 
-input_list = input_raw.split()
+input_list = [int(input_str) for input_str in input_raw.split()]
 
 for i in range(len(input_list)):
     for j in range(len(input_list)):
