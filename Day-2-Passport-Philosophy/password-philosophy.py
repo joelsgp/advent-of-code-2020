@@ -27,6 +27,7 @@ for input_line in input_list:
         'search_char': input_elements[2],
         'pass': input_elements[3]
     }
+    input_dicts_list.append(input_dict)
 
 valid_passes = 0
 for input_dict in input_dicts_list:
