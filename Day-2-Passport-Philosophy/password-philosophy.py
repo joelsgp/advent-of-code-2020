@@ -5,8 +5,9 @@ with open('input', 'r') as input_file:
 
 input_list = input_raw.split()
 
-re_pattern = ''
-re_pattern_object = re.compile(re_pattern)
+# example match: 1-3 a: abcde
+#                ()-() (): ()
+re_pattern = re.compile('([0-9]+)-([0-9]+) ([a-z]): ([a-z]+)')
 
 # need to extract:
 # 0 lower bound
@@ -17,7 +18,7 @@ re_pattern_object = re.compile(re_pattern)
 
 input_dicts_list = []
 for input_line in input_list:
-    re_match = re_pattern_object.match(input_line)
+    re_match = re_pattern.match(input_line)
     input_elements = re_match.groups()
 
     input_dict = {
