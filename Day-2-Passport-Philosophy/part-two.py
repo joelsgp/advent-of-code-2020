@@ -4,11 +4,12 @@ import re
 def part_two_pass_check(in_dict):
     # have to account for index not necessarily matching string length with try-catch
     try:
-        lower_bound_match = in_dict['pass'][in_dict['lower_bound']] == in_dict['search_char']
-        upper_bound_match = in_dict['pass'][in_dict['upper_bound']] == in_dict['search_char']
+        lower_bound_match = in_dict['pass'][in_dict['lower_bound']-1] == in_dict['search_char']
+        upper_bound_match = in_dict['pass'][in_dict['upper_bound']-1] == in_dict['search_char']
     except IndexError:
         return False
 
+    # ^ is xor
     if lower_bound_match ^ upper_bound_match:
         return True
     else:
