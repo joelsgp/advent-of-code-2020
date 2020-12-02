@@ -3,7 +3,7 @@ import re
 with open('input', 'r') as input_file:
     input_raw = input_file.read()
 
-input_list = input_raw.split()
+input_list = input_raw.splitlines()
 
 # example match: 1-3 a: abcde
 #                ()-() (): ()
