@@ -15,15 +15,23 @@ re_pattern_object = re.compile(re_pattern)
 # 3 pass
 # in that order
 
+input_dicts_list = []
 for input_line in input_list:
     re_match = re_pattern_object.match(input_line)
-    input_elements_list = re_match.groups()
+    input_elements = re_match.groups()
+
+    input_dict = {
+        'lower_bound': int(input_elements[0]),
+        'upper_bound': int(input_elements[1]),
+        'search_char': input_elements[2],
+        'pass': input_elements[3]
+    }
 
 valid_passes = 0
-for elements in input_elements_list:
-    search_char_occurrences = elements[3].count(elements[2])
+for input_dict in input_dicts_list:
+    search_char_occurrences = input_dict['pass'].count(input_dict['search_char'])
 
-    if elements[0] <= search_char_occurrences <= elements[1]:
+    if input_dict['lower_bound'] <= search_char_occurrences <= input_dict['upper_bound']:
         valid_passes += 1
 
 print(valid_passes)
