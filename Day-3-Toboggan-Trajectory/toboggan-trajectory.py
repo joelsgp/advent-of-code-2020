@@ -2,7 +2,11 @@ with open('input', 'r') as input_file:
     input_raw = input_file.read()
 
 slopes = [
-    [3, 1]
+    [1, 1],
+    [3, 1],  # original
+    [5, 1],
+    [7, 1],
+    [1, 2],
 ]
 
 char_map = {
