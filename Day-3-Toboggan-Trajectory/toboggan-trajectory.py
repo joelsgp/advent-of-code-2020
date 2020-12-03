@@ -14,7 +14,7 @@ for line in input_raw.splitlines():
 x_coord = 0
 tree_collisions = 0
 for input_line in input_2d_list:
-    if x_coord > len(input_line):
+    if x_coord >= len(input_line):
         x_coord -= len(input_line)
 
     if input_line[x_coord]:
