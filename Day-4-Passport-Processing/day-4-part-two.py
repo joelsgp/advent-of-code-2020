@@ -105,7 +105,7 @@ for passport in passports:
         passport_dict[passport_field_elements[0]] = passport_field_elements[1]
 
     passports_dicts.append(passport_dict)
-print(passports_dicts)
+##print(passports_dicts)
 
 valid_passports_count = 0
 for passport in passports_dicts:
