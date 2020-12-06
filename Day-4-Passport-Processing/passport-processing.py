@@ -1,3 +1,6 @@
+# This solution was done at a college workstation, so opening the file worked a little different,
+# and code formatting quality may be slightly lower as I could only use IDLE.
+
 def check_passport(passport, required_fields):
     for field in required_fields:
         if field not in passport:
