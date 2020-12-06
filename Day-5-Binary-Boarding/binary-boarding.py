@@ -4,14 +4,34 @@ with open('input', 'r') as input_file:
 partitions = input_raw.splitlines()
 
 
+def binary_space_partition(partition, lower_bound, upper_bound, lower_char, upper_char):
+    available = [i for i in range(lower_bound, upper_bound+1)]
+
+    for char in partition:
+        split = (len(available) / 2) + 1
+
+        if char == lower_char:
+            available = available[:split]
+        elif char == upper_char:
+            available = available[split:]
+        else:
+            raise TypeError(f'Invalid split indicator character: {char}')
+
+    position = next(available)
+    return position
+
+
 def seat_id_from_partition(partition):
-    # TODO: implement
-    return 0
+    row = binary_space_partition(partition[:7], 0, 127, 'B', 'F')
+    column = binary_space_partition(partition[7:], 0, 7, 'L', 'R')
+
+    seat_id = row * column
+    return seat_id
 
 
 highest_id = 0
-for partition in partitions:
-    partition_seat_id = seat_id_from_partition(partition)
+for seat_partition in partitions:
+    partition_seat_id = seat_id_from_partition(seat_partition)
     if partition_seat_id > highest_id:
         highest_id = partition_seat_id
 
