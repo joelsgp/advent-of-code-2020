@@ -11,9 +11,9 @@ def binary_space_partition(partition, lower_bound, upper_bound, lower_char, uppe
         split = int(len(available) / 2)
 
         if char == lower_char:
-            available = available[:split]
-        elif char == upper_char:
             available = available[split:]
+        elif char == upper_char:
+            available = available[:split]
         else:
             raise TypeError(f'Invalid split indicator character: {char}')
 
