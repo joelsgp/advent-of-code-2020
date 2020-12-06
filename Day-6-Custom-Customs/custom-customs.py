@@ -23,7 +23,7 @@ def get_unanimous_answers(group):
     for response in group:
         for answer in unanimous_answers:
             if answer not in response:
-                del unanimous_answers[unanimous_answers.find(answer)]
+                del unanimous_answers[unanimous_answers.index(answer)]
 
     return len(unanimous_answers)
 
