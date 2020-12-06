@@ -23,7 +23,7 @@ def binary_space_partition(partition, lower_bound, upper_bound, lower_char, uppe
 
 def seat_id_from_partition(partition):
     row = binary_space_partition(partition[:7], 0, 127, 'B', 'F')
-    column = binary_space_partition(partition[7:], 0, 7, 'L', 'R')
+    column = binary_space_partition(partition[7:], 0, 7, 'R', 'L')
 
     seat_id = row * column
     return seat_id
