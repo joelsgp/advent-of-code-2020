@@ -21,9 +21,11 @@ def get_unanimous_answers(group):
     unanimous_answers = list(string.ascii_lowercase)
 
     for response in group:
+        unanimous_answers_working = list(unanimous_answers)
         for answer in unanimous_answers:
             if answer not in response:
-                unanimous_answers.remove(answer)
+                unanimous_answers_working.remove(answer)
+        unanimous_answers = list(unanimous_answers_working)
 
     return len(unanimous_answers)
 
